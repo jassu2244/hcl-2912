@@ -1,5 +1,7 @@
 package Collections.Task1;
 
+import Collections.Task1.Student;
+
 import java.util.*;
 
 public class StudentList {
@@ -24,6 +26,12 @@ public class StudentList {
         Collections.sort(list);
 
         System.out.println("\nSorted by Comparable - ");
+//        list.forEach(System.out::println);
+        list.forEach(s -> System.out.println(s));
+
+        Collections.sort(list, new StudentComparator());
+
+        System.out.println("\nSorted by Comparator (Roll No) - ");
         list.forEach(System.out::println);
     }
 }
