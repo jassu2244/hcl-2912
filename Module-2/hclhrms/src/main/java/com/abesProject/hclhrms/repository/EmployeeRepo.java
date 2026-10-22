@@ -1,0 +1,16 @@
+package com.abesProject.hclhrms.repository;
+
+import com.abesProject.hclhrms.entity.Employee;
+import org.springframework.stereotype.Repository;
+
+import java.util.*;
+
+@Repository
+public interface EmployeeRepo {
+    String addEmp(Employee emp);
+    List<Employee> getEmp();
+    Employee getEmpById(long empId);
+    String deleteById(long empId);
+    String updateById(long empId, Employee updatedEmp);
+
+}
