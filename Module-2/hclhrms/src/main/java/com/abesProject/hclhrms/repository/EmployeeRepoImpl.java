@@ -17,13 +17,19 @@ public class EmployeeRepoImpl implements EmployeeRepo{
     }
 
     @Override
+    public String addEmpBulk(List<Employee> bulkEmp) {
+        empList.addAll(bulkEmp);
+        return "Employee added successfully";
+    }
+
+    @Override
     public List<Employee> getEmp() {
         return empList;
     }
 
     @Override
     public Employee getEmpById(long empId) {
-        return null;
+        return empList.stream().filter(e -> e.getEmp_id() == empId).findFirst().orElse(null);
     }
 
     @Override
